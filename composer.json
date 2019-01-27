@@ -1,0 +1,32 @@
+{
+  "name": "wdmg/yii2-validators",
+  "description": "Custom validators for Yii 2.0",
+  "keywords": ["yii", "yii2", "extension", "validators", "stoplist", "blacklist", "wdmg"],
+  "type": "yii2-extension",
+  "license": "MIT",
+  "version": "1.0.0",
+  "homepage": "https://github.com/wdmg/yii2-validators",
+  "support": {
+    "source": "https://github.com/wdmg/yii2-validators",
+    "issues": "https://github.com/wdmg/yii2-validators/issues"
+  },
+  "authors": [
+    {
+      "name": "Alexsander Vyshnyvetskyy",
+      "email": "alex.vyshnyvetskyy@gmail.com"
+    },
+    {
+      "name": "W.D.M.Group, Ukraine",
+      "email": "wdmg.com.ua@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "^2.0.13"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "wdmg\\validators\\": "src"
+    }
+  }
+}
