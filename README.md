@@ -30,4 +30,4 @@ Example of usecase StopListValidator to model rules:
     ?>
 
 # Status and version
-* v.1.0.0 - Validators in progress development.
+* v.1.0.1 - Validators in progress development.
