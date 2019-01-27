@@ -5,6 +5,8 @@ namespace wdmg\validators;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\validators\Validator;
+use yii\validators\ValidationAsset;
+use yii\helpers\Json;
 
 class StopListValidator extends Validator
 {
@@ -42,21 +44,43 @@ class StopListValidator extends Validator
     }
 
     /**
-     * Check if the value in the list of banned words
-     * @param mixed $value
-     * @return array
+     * {@inheritdoc}
      */
-    public function validateValue($value)
+    protected function validateValue($value)
     {
-        if ($value === null)
-            throw new InvalidConfigException('Value must be set.');
-
-        if (in_array($value, $this->stoplist, $this->strict) || in_array(preg_replace('/\d+/u', '', $value), $this->stoplist, $this->strict)) {
-            return [
-                $this->message,
-            ];
+        if (!is_string($value)) {
+            $valid = false;
+        } elseif (in_array($value, $this->stoplist, $this->strict) || in_array(preg_replace('/\d+/u', '', $value), $this->stoplist, $this->strict)) {
+            $valid = false;
+        } else {
+            $valid = true;
         }
 
-        return true;
+        return $valid ? null : [$this->message, []];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function clientValidateAttribute($model, $attribute, $view)
+    {
+        ValidationAsset::register($view);
+        $options = $this->getClientOptions($model, $attribute);
+        return 'yii.validation.stoplist(value, messages, ' . Json::htmlEncode($options) . ');';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getClientOptions($model, $attribute)
+    {
+        $options = [
+            'stoplist' => $this->stoplist,
+            'message' => $this->formatMessage($this->message, [
+                'attribute' => $model->getAttributeLabel($attribute),
+            ]),
+        ];
+
+        return $options;
     }
 }
