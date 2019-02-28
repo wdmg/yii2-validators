@@ -29,5 +29,6 @@ Example of usecase StopListValidator to model rules:
     
     ?>
 
-# Status and version
-* v.1.0.1 - Validators in progress development.
+# Status and version [in progress development]
+* v.1.0.1 - Added StopListValidator
+* v.1.0.0 - Initial
