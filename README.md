@@ -5,7 +5,7 @@ Custom validators for Yii2
 
 # Requirements 
 * PHP 5.6 or higher
-* Yii2 v.2.0.13 and newest
+* Yii2 v.2.0.19 and newest
 
 # Installation
 To install the validators, run the following command in the console:
@@ -30,5 +30,5 @@ Example of usecase StopListValidator to model rules:
     ?>
 
 # Status and version [in progress development]
+* v.1.0.2 - Update Yii2 version
 * v.1.0.1 - Added StopListValidator
-* v.1.0.0 - Initial
