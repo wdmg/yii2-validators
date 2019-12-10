@@ -22,7 +22,7 @@ Example of usecase StopListValidator to model rules:
     
     public function rules() {
         return [
-            [['attribute'], StopListValidator::className(), 'stoplist' => ['admin', 'root', 'superuser', ...], 'message' => 'You can not use this value `{value}` for field `{attribute}`'],
+            [['attribute'], StopListValidator::class, 'stoplist' => ['admin', 'root', 'superuser', ...], 'message' => 'You can not use this value `{value}` for field `{attribute}`'],
             ...
         ];
     }
