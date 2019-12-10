@@ -45,7 +45,7 @@ class StopListValidator extends Validator
     {
         parent::init();
 
-        if ($this->stoplist === null)
+        if (is_null($this->stoplist))
             throw new InvalidConfigException('Stoplist should be defined');
 
         if (!count($this->stoplist))

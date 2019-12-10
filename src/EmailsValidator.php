@@ -15,6 +15,7 @@ namespace wdmg\validators;
  */
 
 use Yii;
+use yii\base\InvalidConfigException;
 use yii\validators\Validator;
 use yii\validators\EmailValidator;
 
@@ -68,6 +69,9 @@ class EmailsValidator extends Validator
     public function init()
     {
         parent::init();
+
+        if (is_null($this->delimiter))
+            throw new InvalidConfigException('Delimiter should be defined');
 
         $this->_validator = new EmailValidator();
 
