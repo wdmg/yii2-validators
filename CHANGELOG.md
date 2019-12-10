@@ -1,6 +1,9 @@
 Changelog
 =========
 
+## 1.0.4 (2019-12-10)
+ * Added JsonValidator and EmailsValidator
+ 
 ## 1.0.3 (2019-06-05)
  * Update Yii2 version
  

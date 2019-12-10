@@ -30,4 +30,5 @@ Example of usecase StopListValidator to model rules:
     ?>
 
 # Status and version [in progress development]
+* v.1.0.4 - Added JsonValidator and EmailsValidator
 * v.1.0.3 - Update Yii2 version

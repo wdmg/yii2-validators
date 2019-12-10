@@ -6,7 +6,7 @@ namespace wdmg\validators;
  * Yii2 Stop list validator
  *
  * @category        Validators
- * @version         1.0.2
+ * @version         1.0.4
  * @author          Alexsander Vyshnyvetskyy <alex.vyshnyvetskyy@gmail.com>
  * @link            https://github.com/wdmg/yii2-validators
  * @copyright       Copyright (c) 2019 W.D.M.Group, Ukraine
@@ -34,6 +34,11 @@ class StopListValidator extends Validator
     public $strict = false;
 
     /**
+     * @var string, error message when the value is not a valid
+     */
+    public $message;
+
+    /**
      * {@inheritdoc}
      */
     public function init()
@@ -49,9 +54,8 @@ class StopListValidator extends Validator
         if (!is_array($this->stoplist))
             throw new InvalidConfigException('Stoplist should be an array');
 
-        if ($this->message === null)
-            $this->message = \Yii::t('yii',
-                'You can not use this value `{value}` for field `{attribute}`');
+        if (is_null($this->message))
+            $this->message = Yii::t('app', 'You can not use this value `{value}` for field `{attribute}`');
 
     }
 
