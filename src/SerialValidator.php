@@ -3,7 +3,7 @@
 namespace wdmg\validators;
 
 /**
- * Yii2 JSON Validator
+ * Yii2 Serialized Data Validator
  *
  * @category        Validators
  * @version         1.0.5
@@ -18,7 +18,7 @@ use Yii;
 use yii\validators\Validator;
 
 
-class JsonValidator extends Validator
+class SerialValidator extends Validator
 {
 
     /**
@@ -39,24 +39,21 @@ class JsonValidator extends Validator
     }
 
     public static function isValid($value) {
-        json_decode($value);
-        if (json_last_error())
+
+        if (@unserialize($value) === false) {
             return false;
+        }
 
         return true;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    protected function validateValue($value)
-    {
+    public function validateValue($value) {
 
         if (self::isValid($value)) {
             return [
                 $this->message,
                 [
-                    'error' => json_last_error_msg()
+                    'error' => 'unserialized data'
                 ]
             ];
         }

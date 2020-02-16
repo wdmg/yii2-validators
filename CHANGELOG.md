@@ -1,6 +1,9 @@
 Changelog
 =========
 
+## 1.0.5 (2020-02-12)
+ * Added SerialValidator
+ 
 ## 1.0.4 (2019-12-10)
  * Added JsonValidator and EmailsValidator
  
