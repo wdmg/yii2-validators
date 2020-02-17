@@ -52,7 +52,7 @@ class JsonValidator extends Validator
     protected function validateValue($value)
     {
 
-        if (self::isValid($value)) {
+        if (!self::isValid($value)) {
             return [
                 $this->message,
                 [

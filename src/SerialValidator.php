@@ -34,7 +34,7 @@ class SerialValidator extends Validator
         parent::init();
 
         if (is_null($this->message))
-            $this->message = Yii::t('app', 'The value of field `{attribute}` must be a valid JSON: {error}.');
+            $this->message = Yii::t('app', 'The value of field `{attribute}` must be a valid serialized data: {error}.');
 
     }
 
@@ -49,7 +49,7 @@ class SerialValidator extends Validator
 
     public function validateValue($value) {
 
-        if (self::isValid($value)) {
+        if (!self::isValid($value)) {
             return [
                 $this->message,
                 [
