@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## 1.0.6 (2020-04-28)
+ * Update README.md and dependencies
+ * Updating year in copyrights
+ 
 ## 1.0.5 (2020-02-12)
  * Added SerialValidator
  

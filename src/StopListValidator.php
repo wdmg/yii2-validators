@@ -6,7 +6,7 @@ namespace wdmg\validators;
  * Yii2 Stop list validator
  *
  * @category        Validators
- * @version         1.0.5
+ * @version         1.0.6
  * @author          Alexsander Vyshnyvetskyy <alex.vyshnyvetskyy@gmail.com>
  * @link            https://github.com/wdmg/yii2-validators
  * @copyright       Copyright (c) 2019 - 2020 W.D.M.Group, Ukraine
