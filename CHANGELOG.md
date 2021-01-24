@@ -1,6 +1,9 @@
 Changelog
 =========
 
+## 1.0.7 (2021-01-24)
+ * StopListValidator renamed to ReservedValidator
+
 ## 1.0.6 (2020-04-28)
  * Update README.md and dependencies
  * Updating year in copyrights

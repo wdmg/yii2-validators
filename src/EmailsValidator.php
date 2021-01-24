@@ -6,7 +6,7 @@ namespace wdmg\validators;
  * Yii2 Emails Validator
  *
  * @category        Validators
- * @version         1.0.6
+ * @version         1.0.7
  * @author          Alexsander Vyshnyvetskyy <alex.vyshnyvetskyy@gmail.com>
  * @link            https://github.com/wdmg/yii2-validators
  * @copyright       Copyright (c) 2019 - 2021 W.D.M.Group, Ukraine

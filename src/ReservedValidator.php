@@ -3,10 +3,10 @@
 namespace wdmg\validators;
 
 /**
- * Yii2 Stop list validator
+ * Yii2 Reserved Validator by stop list
  *
  * @category        Validators
- * @version         1.0.6
+ * @version         1.0.7
  * @author          Alexsander Vyshnyvetskyy <alex.vyshnyvetskyy@gmail.com>
  * @link            https://github.com/wdmg/yii2-validators
  * @copyright       Copyright (c) 2019 - 2021 W.D.M.Group, Ukraine
@@ -20,7 +20,7 @@ use yii\validators\Validator;
 use yii\validators\ValidationAsset;
 use yii\helpers\Json;
 
-class StopListValidator extends Validator
+class ReservedValidator extends Validator
 {
 
     /**
@@ -82,7 +82,7 @@ class StopListValidator extends Validator
     {
         ValidationAsset::register($view);
         $options = $this->getClientOptions($model, $attribute);
-        return 'yii.validation.stoplist(value, messages, ' . Json::htmlEncode($options) . ');';
+        return 'yii.validation.reserved(value, messages, ' . Json::htmlEncode($options) . ');';
     }
 
     /**
