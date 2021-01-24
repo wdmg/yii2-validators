@@ -2,6 +2,7 @@ Changelog
 =========
 
 ## 1.0.7 (2021-01-24)
+ * ReservedValidatorAssets and client side validation
  * StopListValidator renamed to ReservedValidator
 
 ## 1.0.6 (2020-04-28)

@@ -17,8 +17,8 @@ namespace wdmg\validators;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\validators\Validator;
-use yii\validators\ValidationAsset;
 use yii\helpers\Json;
+use wdmg\validators\ReservedValidatorAsset;
 
 class ReservedValidator extends Validator
 {
@@ -80,9 +80,9 @@ class ReservedValidator extends Validator
      */
     public function clientValidateAttribute($model, $attribute, $view)
     {
-        ValidationAsset::register($view);
+        ReservedValidatorAsset::register($view);
         $options = $this->getClientOptions($model, $attribute);
-        return 'yii.validation.reserved(value, messages, ' . Json::htmlEncode($options) . ');';
+        return 'ReservedValidator.validate(value, messages, ' . Json::htmlEncode($options) . ');';
     }
 
     /**
@@ -92,6 +92,7 @@ class ReservedValidator extends Validator
     {
         $options = [
             'stoplist' => $this->stoplist,
+            'strict' => $this->strict,
             'message' => $this->formatMessage($this->message, [
                 'attribute' => $model->getAttributeLabel($attribute),
             ]),
